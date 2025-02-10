@@ -17,13 +17,13 @@ public class LoginPage extends PredefinedActions{
 	
 	public LoginPage enterUserName(String username) {
 		//driver.findElement(By.name("username")).sendKeys("admin");
-		enterText("name", "username", false, "admin");
+		enterText("name", "username", false, username);
 		return this;
 	}
 	
 	public LoginPage enterPassWord(String password) {
 		//driver.findElement(By.name("password")).sendKeys("admin123");
-		enterText("name", "password",false,"admin123");
+		enterText("name", "password",false,password);
 		return this;
 	}
 	
