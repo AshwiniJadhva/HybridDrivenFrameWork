@@ -19,7 +19,7 @@ public class PredefinedActions {
 	protected static WebDriver driver;
 	static private WebDriverWait wait;
 	static public void start() {
-		start("admin", "admin123","https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+		start("admin", "admin123",ConstantPath.URL);
 	}
 	
 	static public void start(String username, String password, String url) {
