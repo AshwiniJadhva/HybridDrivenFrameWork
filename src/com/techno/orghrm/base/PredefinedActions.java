@@ -18,6 +18,8 @@ public class PredefinedActions {
 	
 	protected static WebDriver driver;
 	static private WebDriverWait wait;
+	
+	
 	static public void start() {
 		start("admin", "admin123",ConstantPath.URL);
 	}
@@ -115,7 +117,7 @@ public class PredefinedActions {
 		return element;
 	}
 	
-	protected List<WebElement> getAllElement(String locatorType, String locator, boolean isWaitRequried){
+	protected List<WebElement> getAllElements(String locatorType, String locator, boolean isWaitRequried){
 		List<WebElement> elements = new ArrayList<>();
 		switch(locatorType.toUpperCase()) {
 		case "XPATH":

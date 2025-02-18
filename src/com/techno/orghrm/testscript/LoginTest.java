@@ -11,7 +11,8 @@ import org.testng.annotations.Test;
 
 import com.techno.orghrm.base.PredefinedActions;
 import com.techno.orghrm.constant.ConstantPath;
-import com.techno.orghrm.pages.HomePage;
+import com.techno.orghrm.pages.DashBoardPage;
+//import com.techno.orghrm.pages.HomePage;
 import com.techno.orghrm.pages.LoginPage;
 import com.techno.orghrm.utility.ExcelOperation;
 
@@ -24,15 +25,15 @@ public class LoginTest {
 		
 		
 		Assert.assertTrue(loginPage.isLogoDisplayed(), "Logo No Displayed");
-		HomePage homePage = loginPage.doLogin("admin", "admin123");		
+		DashBoardPage dashBoardPage = loginPage.doLogin("admin", "admin123");		
 		
-		Assert.assertTrue(homePage.isBannerDisplayed(), "Banner Not Displayed");
+		Assert.assertTrue(dashBoardPage.isBannerDisplayed(), "Banner Not Displayed");
 		
-		boolean isDashboardpreselected = homePage.isdashBoardPreSelected();
+		boolean isDashboardpreselected = dashBoardPage.isdashBoardPreSelected();
 		Assert.assertTrue(isDashboardpreselected,"Dashboard was not pre-selected");
 		
-		List<String>menuList = homePage.getMenulist();
-		Assert.assertEquals(11, menuList.size(),"some menu are missing");
+		List<String>menuList = dashBoardPage.getMenulist();
+		Assert.assertEquals(12, menuList.size(),"some menu are missing");
 		PredefinedActions.tearDown();
 	}
 	
@@ -46,11 +47,11 @@ public class LoginTest {
 			
 			
 			Assert.assertTrue(loginPage.isLogoDisplayed(), "Logo No Displayed");
-			HomePage homePage = loginPage.doLogin("admin", "admin123");		
+			DashBoardPage dashBoardPage = loginPage.doLogin("admin", "admin123");		
 			
-			Assert.assertTrue(homePage.isBannerDisplayed(), "Banner Not Displayed");
+			Assert.assertTrue(dashBoardPage.isBannerDisplayed(), "Banner Not Displayed");
 			
-			boolean isDashboardpreselected = homePage.isdashBoardPreSelected();
+			boolean isDashboardpreselected = dashBoardPage.isdashBoardPreSelected();
 			Assert.assertTrue(isDashboardpreselected,"Dashboard was not pre-selected");
 			
 		}
@@ -72,13 +73,13 @@ public class LoginTest {
 			}
 			else Assert.assertTrue(false);
 		}
-		else if(expectedResult.equals("Invalid credentials")) {
+		else if(expectedResult.equals("Invalid credentialsnn")) {
 			if(!ConstantPath.URL.contains("dashboard")) {
 				Assert.assertTrue(true);
 			}
 			else Assert.assertTrue(false);
 		}
-		
+		//PredefinedActions.tearDown();
 		
 	}
 	@DataProvider(name = "orghrnLoginDataProvider")
