@@ -9,7 +9,7 @@ public class LoginPage extends PredefinedActions{
 		
 	}
 	
-	public HomePage doLogin(String username, String password) {
+	public DashBoardPage doLogin(String username, String password) {
 		enterUserName(username);
 		enterPassWord(password);
 		return clickonbutton();
@@ -17,7 +17,7 @@ public class LoginPage extends PredefinedActions{
 	
 	public LoginPage enterUserName(String username) {
 		//driver.findElement(By.name("username")).sendKeys("admin");
-		enterText("name", "username", false, username);
+		enterText("xpath", "//input[@name='username']", true, username);
 		return this;
 	}
 	
@@ -27,10 +27,10 @@ public class LoginPage extends PredefinedActions{
 		return this;
 	}
 	
-	public HomePage clickonbutton() {
+	public DashBoardPage clickonbutton() {
 		//driver.findElement(By.xpath(" //button[text()=' Login ']")).click();
 		clickOnElement("xpath", " //button[text()=' Login ']", false);
-		return new HomePage();
+		return new DashBoardPage();
 	}
 	
 	
